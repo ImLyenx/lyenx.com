@@ -1,0 +1,31 @@
+---
+const {
+  title = "Default",
+  description = "If you want to find out about Lyenx's projects or social medias, this is the right place !",
+} = Astro.props;
+---
+
+<meta charset="UTF-8" />
+<meta name="description" property="og:description" content={description} />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+<title>{title + " | Lyenx"}</title>
+
+<link rel="icon" href="/icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+  rel="stylesheet"
+/>
+
+<style>
+  html {
+    font-family: "Roboto", sans-serif;
+    color: rgb(23, 26, 33);
+  }
+
+  html.dark {
+    color: rgb(232, 229, 222);
+  }
+</style>
