@@ -3,7 +3,18 @@ const {
   title = "Default",
   description = "If you want to find out about Lyenx's projects or social medias, this is the right place !",
 } = Astro.props;
+import ThemeScript from "./ThemeScript.astro";
 ---
+
+<ThemeScript />
+
+<script
+  id="Cookiebot"
+  src="https://consent.cookiebot.com/uc.js"
+  data-cbid="7be4e400-e214-4531-a509-f153d1669561"
+  data-blockingmode="auto"
+  type="text/javascript"
+></script>
 
 <meta charset="UTF-8" />
 <meta name="description" property="og:description" content={description} />
