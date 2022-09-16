@@ -1,11 +1,15 @@
 <footer
-  class="absolute h-24 w-full items-center justify-center flex flex-col bottom-0"
+  class="absolute md:h-28 h-32 w-full items-center justify-center flex flex-col bottom-0 space-y-4"
 >
-  <div class="flex justify-center space-x-2">
-    <p>This website uses cookies.</p>
-    <a href="/cookies" class="hover:text-slate-400 transition-colors underline"
-      >Cookies Declaration</a
-    >
+  <div class="md:flex block relative justify-center space-x-2">
+    <p class="md:mx-0 mx-auto">This website uses cookies.</p>
+    <div class="flex relative justify-center">
+      <a
+        href="/cookies"
+        class="hover:text-slate-400 transition-colors underline"
+        >Cookies Declaration</a
+      >
+    </div>
   </div>
   <div>
     &copy; Lyenx, {new Date().getFullYear()}
