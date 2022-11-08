@@ -3,6 +3,16 @@ import Nav from "../components/Nav.astro";
 import MainHead from "../components/MainHead.astro";
 import Footer from "../components/Footer.astro";
 
+import "../styles/global.css";
+import "@fontsource/poppins";
+import "@fontsource/poppins/400-italic.css";
+import "@fontsource/poppins/500.css";
+import "@fontsource/poppins/500-italic.css";
+import "@fontsource/poppins/600.css";
+import "@fontsource/poppins/600-italic.css";
+import "@fontsource/poppins/700.css";
+import "@fontsource/poppins/800.css";
+
 const { title } = Astro.props;
 ---
 
@@ -10,9 +20,9 @@ const { title } = Astro.props;
   <head>
     <MainHead title={title} />
   </head>
-  <body class="bg-zinc-400 dark:bg-slate-800 relative min-h-screen">
+  <body class="relative min-h-screen">
     <Nav />
-    <div class="md:pb-28 pb-32">
+    <div class="md:pb-28 pb-32 animate-content-fade">
       <slot />
     </div>
     <Footer />
