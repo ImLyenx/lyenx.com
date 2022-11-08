@@ -32,4 +32,38 @@ import { socialItems } from "../data/socials";
     }
     <li class="rounded-xl"><ToggleTheme /></li>
   </ul>
+  <div class="dropdown dropdown-end md:hidden flex ml-auto">
+    <label tabindex="0" class="btn btn-square btn-ghost m-1 text-2xl"
+      ><i class="fa fa-bars"></i>
+    </label>
+    <ul
+      tabindex="0"
+      class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+    >
+      <ul class="menu menu-vertical">
+        {
+          navItems.map(({ href, label }) => (
+            <li class="rounded-xl">
+              <a href={href}>{label}</a>
+            </li>
+          ))
+        }
+        <ul class="menu menu-horizontal justify-between">
+          {
+            socialItems.map(({ href, label, icon }) => (
+              <li
+                class="rounded-xl tooltip tooltip-top tooltip-secondary"
+                data-tip={label}
+              >
+                <a href={href}>
+                  <i class={icon} />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </ul>
+      <li><ToggleTheme /></li>
+    </ul>
+  </div>
 </nav>
