@@ -4,7 +4,7 @@ import { navItems } from "../data/nav";
 import { socialItems } from "../data/socials";
 ---
 
-<nav class="opacity-90 sticky flex py-4 px-8 w-full h-20 items-center">
+<nav class="sticky flex py-4 px-8 w-full h-20 items-center">
   <a href="/" class="btn btn-ghost">
     <!-- <img src="/icon.svg" alt="logo" class="h-8" /> -->
     lyenx.com
@@ -14,7 +14,9 @@ import { socialItems } from "../data/socials";
     {
       navItems.map(({ href, label }) => (
         <li class="rounded-xl">
-          <a href={href}>{label}</a>
+          <a href={href} class="active:bg-base-content/30 active:text-inherit">
+            {label}
+          </a>
         </li>
       ))
     }
@@ -24,7 +26,7 @@ import { socialItems } from "../data/socials";
           class="rounded-xl tooltip tooltip-bottom tooltip-secondary"
           data-tip={label}
         >
-          <a href={href}>
+          <a href={href} class="active:bg-base-content/30 active:text-inherit">
             <i class={icon} />
           </a>
         </li>
@@ -38,24 +40,32 @@ import { socialItems } from "../data/socials";
     </label>
     <ul
       tabindex="0"
-      class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+      class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 border-solid border-2 border-secondary"
     >
       <ul class="menu menu-vertical">
         {
           navItems.map(({ href, label }) => (
             <li class="rounded-xl">
-              <a href={href}>{label}</a>
+              <a
+                href={href}
+                class="active:bg-base-content/30 active:text-inherit"
+              >
+                {label}
+              </a>
             </li>
           ))
         }
-        <ul class="menu menu-horizontal justify-between">
+        <ul class="menu menu-horizontal menu-compacty">
           {
             socialItems.map(({ href, label, icon }) => (
               <li
                 class="rounded-xl tooltip tooltip-top tooltip-secondary"
                 data-tip={label}
               >
-                <a href={href}>
+                <a
+                  href={href}
+                  class="active:bg-base-content/30 active:text-inherit"
+                >
                   <i class={icon} />
                 </a>
               </li>
