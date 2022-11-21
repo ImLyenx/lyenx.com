@@ -36,3 +36,15 @@ option {
 [data-theme="night"] option {
   background-color: #0f1729;
 }
+
+.errornotfound {
+  background-image: url("/404winter.svg");
+}
+
+[data-theme="night"] .errornotfound {
+  background-image: url("/404night.svg");
+}
+
+[data-theme="ocean"] .errornotfound {
+  background-image: url("/404ocean.svg");
+}

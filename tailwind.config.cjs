@@ -22,13 +22,13 @@ module.exports = {
           "50%": { "box-shadow": "#463aa1 0px -2.25rem 0px inset" },
         },
         fade: {
-          "0%": { opacity: 0, transform: "translateY(8px)" },
+          "0%": { opacity: 0, transform: "translateY(16px)" },
           "100%": { opacity: 1, transform: "translateY(0px)" },
         },
       },
       animation: {
         "box-shadow": "boxshadow 2s ease-in-out 2s",
-        "content-fade": "fade 0.4s ease",
+        "content-fade": "fade 0.6s ease",
       },
     },
   },

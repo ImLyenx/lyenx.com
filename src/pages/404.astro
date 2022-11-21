@@ -2,4 +2,14 @@
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<MainLayout title="404">404 Page Not Found</MainLayout>
+<MainLayout title="404 Not Found"
+  ><div id="title" class="pt-16 pl-[10vw] text-6xl">
+    This page does not exist... <br /><br />
+    <span class="text-4xl"
+      >Click <a href="/" class="underline font-extrabold">here</a> to come back</span
+    >
+  </div>
+  <div class="flex justify-center">
+    <div class="h-96 w-96 mx-auto mt-4 errornotfound"></div>
+  </div>
+</MainLayout>
