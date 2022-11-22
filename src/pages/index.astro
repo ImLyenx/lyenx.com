@@ -4,15 +4,24 @@ import Typewriter from "typewriter-effect/dist/core";
 ---
 
 <MainLayout title="Home">
-  <div id="title" class="pl-[10vw] pt-16 text-6xl align-bottom">
-    Hey! I'm <span class="highlight inline-block font-extrabold pl-1 pr-1"
-      >Eric</span
-    ><br /><br />
-    But you can call me <span
-      class="highlight inline-block font-extrabold pl-1 pr-1">Lyenx</span
-    >.
+  <div
+    id="title"
+    class="md:pl-[10vw] pl-4 md:pt-16 pt-8 md:text-6xl text-4xl ml-4 md:ml-0 align-bottom flex flex-col"
+  >
+    <span class="pt-8 md:pt-0 md:text-6xl text-5xl"
+      >Hey! I'm <span
+        class="highlight inline-block font-extrabold pl-1 pr-1 w-fit">Eric</span
+      >
+    </span>
 
-    <p class="text-3xl mt-24">I'm a <span id="writer"></span></p>
+    <span class="mt-8 md:pt-0 md:text-4xl text-2xl"
+      >But you can call me <span
+        class="highlight inline-block font-extrabold pl-1 pr-1 w-fit"
+        >Lyenx</span
+      >.</span
+    >
+
+    <p class="text-3xl md:mt-24 mt-16">I'm a <span id="writer"></span></p>
   </div>
   <script>
     import Typewriter from "typewriter-effect/dist/core";
