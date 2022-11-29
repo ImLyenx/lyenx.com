@@ -5,9 +5,9 @@ export const socialItems = [
         icon: 'fa fa-github text-2xl',
     },
     {
-        label: 'Twitter',
-        href: 'https://twitter.com/ImLyenx',
-        icon: 'fa fa-twitter text-2xl',
+        label: 'Discord',
+        href: '/',
+        icon: 'fa-brands fa-discord text-2xl',
     },
     {
         label: 'Resume',
