@@ -4,24 +4,32 @@ import Typewriter from "typewriter-effect/dist/core";
 ---
 
 <MainLayout title="Home">
-  <div
-    id="title"
-    class="md:pl-[10vw] pl-4 md:pt-16 pt-8 md:text-6xl text-4xl ml-4 md:ml-0 align-bottom flex flex-col"
-  >
-    <span class="pt-8 md:pt-0 md:text-6xl text-5xl"
-      >Hey! I'm <span
-        class="highlight inline-block font-extrabold pl-1 pr-1 w-fit">Eric</span
-      >
-    </span>
-
-    <span class="mt-8 md:pt-0 md:text-4xl text-2xl"
-      >But you can call me <span
-        class="highlight inline-block font-extrabold pl-1 pr-1 w-fit"
-        >Lyenx</span
-      >.</span
+  <div class="flex md:flex-row flex-col">
+    <div
+      id="title"
+      class="md:pt-16 pt-8 md:text-6xl text-4xl ml-0 md:ml-16 align-bottom flex flex-col"
     >
+      <span class="pt-8 md:pt-0 md:text-6xl text-5xl"
+        >Hey! I'm <span
+          class="highlight inline-block font-extrabold pl-1 pr-1 w-fit"
+          >Eric</span
+        >
+      </span>
 
-    <p class="text-3xl md:mt-24 mt-16">I'm a <span id="writer"></span></p>
+      <span class="mt-8 md:pt-0 md:text-4xl text-2xl"
+        >But you can call me <span
+          class="highlight inline-block font-extrabold pl-1 pr-1 w-fit"
+          >Lyenx</span
+        >
+      </span>
+
+      <p class="text-3xl md:mt-24 mt-16">I'm a <span id="writer"></span></p>
+    </div>
+    <div
+      id="test"
+      class="border-solid border-red-800 border-2 h-[60vh] w-auto md:w-[528px] mt-28 md:ml-48"
+    >
+    </div>
   </div>
   <script>
     import Typewriter from "typewriter-effect/dist/core";

@@ -11,9 +11,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/tailwind": "^1.0.1",
+    "@astrojs/tailwind": "^3.0.0",
     "@fontsource/poppins": "^4.5.10",
-    "astro": "^1.2.3",
+    "astro": "^2.0.1",
     "daisyui": "^2.38.1",
     "typewriter-effect": "^2.19.0"
   }

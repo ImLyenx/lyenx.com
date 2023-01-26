@@ -48,3 +48,18 @@ option {
 [data-theme="ocean"] .errornotfound {
   background-image: url("/404ocean.svg");
 }
+
+.logo-lynx {
+  background-image: url("/logowinter.png");
+  background-size: 100%;
+}
+
+[data-theme="night"] .logo-lynx {
+  background-image: url("/logonight.png");
+  background-size: 100%;
+}
+
+[data-theme="ocean"] .logo-lynx {
+  background-image: url("/logoocean.png");
+  background-size: 100%;
+}
