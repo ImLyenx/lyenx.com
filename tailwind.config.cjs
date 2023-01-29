@@ -34,31 +34,7 @@ module.exports = {
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: [
-      "winter",
-      "night",
-      {
-        ocean: {
-          primary: "#6419E6",
-
-          secondary: "#1f7a8c",
-
-          accent: "#1FB2A6",
-
-          neutral: "#191D24",
-
-          "base-100": "#022B3A",
-
-          info: "#3ABFF8",
-
-          success: "#36D399",
-
-          warning: "#FBBD23",
-
-          error: "#F87272",
-        },
-      },
-    ],
+    themes: ["winter", "night"],
   },
   darkMode: ["class", '[data-theme="winter"]'],
 };

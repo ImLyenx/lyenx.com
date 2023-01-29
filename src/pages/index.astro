@@ -11,15 +11,13 @@ import Typewriter from "typewriter-effect/dist/core";
     >
       <span class="pt-8 md:pt-0 md:text-6xl text-5xl"
         >Hey! I'm <span
-          class="highlight inline-block font-extrabold pl-1 pr-1 w-fit"
-          >Eric</span
+          class="inline-block font-extrabold pl-1 pr-1 w-fit magic">Eric</span
         >
       </span>
 
       <span class="mt-8 md:pt-0 md:text-4xl text-2xl"
         >But you can call me <span
-          class="highlight inline-block font-extrabold pl-1 pr-1 w-fit"
-          >Lyenx</span
+          class="inline-block font-extrabold pl-1 pr-1 w-fit magic">Lyenx</span
         >
       </span>
 
@@ -39,17 +37,23 @@ import Typewriter from "typewriter-effect/dist/core";
         loop: true,
         autoStart: true,
       });
-      tw.typeString("student - <i class='fa fa-graduation-cap' />")
+      tw.typeString(
+        "student - <span class='magic'><i class='fa fa-graduation-cap' /></span>"
+      )
         .pauseFor("3000")
-        .deleteChars("10")
+        .deleteChars("11")
         .pauseFor("200")
-        .typeString("developer - <i class='fa fa-code' />")
+        .typeString(
+          "developer - <span class='magic'><i class='fa fa-code' /></span>"
+        )
         .pauseFor("3000")
-        .deleteChars("12")
+        .deleteChars("13")
         .pauseFor("200")
-        .typeString("guitarist - <i class='fa fa-guitar' />")
+        .typeString(
+          "guitarist - <span class='magic'><i class='fa fa-guitar' /></span>"
+        )
         .pauseFor("3000")
-        .deleteChars("12")
+        .deleteChars("13")
         .pauseFor("200")
         .start();
     });

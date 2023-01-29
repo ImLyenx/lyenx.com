@@ -2,20 +2,20 @@
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<MainLayout title="404 Not Found"
-  ><div
-    id="title"
-    class="md:pt-16 pt-8 md:pl-[10vw] pl-6 md:text-6xl text-5xl flex flex-col"
+<MainLayout title="404 Not Found" />
+<div
+  id="title"
+  class="md:pt-16 pt-8 md:pl-[10vw] pl-6 md:text-6xl text-5xl flex flex-col"
+>
+  This page does not exist
+  <span class="md:text-4xl text-2xl mt-8"
+    >Click <a href="/" class="underline font-extrabold">here</a> to come back</span
   >
-    This page does not exist
-    <span class="md:text-4xl text-2xl mt-8"
-      >Click <a href="/" class="underline font-extrabold">here</a> to come back</span
-    >
+  <!-- ! .highlight pour les liens ? ^ -->
+</div>
+<div class="flex justify-center">
+  <div
+    class="md:h-[40vh] md:w-[40vh] h-[35vh] w-[35vh] mx-auto md:mt-12 mt-8 errornotfound"
+  >
   </div>
-  <div class="flex justify-center">
-    <div
-      class="md:h-[40vh] md:w-[40vh] h-[35vh] w-[35vh] mx-auto md:mt-12 mt-8 errornotfound"
-    >
-    </div>
-  </div>
-</MainLayout>
+</div>

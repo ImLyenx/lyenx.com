@@ -25,7 +25,11 @@ import { socialItems } from "../data/socials";
           class="rounded-xl tooltip tooltip-bottom tooltip-secondary"
           data-tip={label}
         >
-          <a href={href} class="active:bg-base-content/30 active:text-inherit">
+          <a
+            href={href}
+            aria-label={label}
+            class="active:bg-base-content/30 active:text-inherit"
+          >
             <i class={icon} />
           </a>
         </li>

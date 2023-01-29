@@ -16,21 +16,8 @@
   transition: box-shadow 0.3s ease-out 0s;
 }
 
-[data-theme="ocean"] .highlight:hover {
-  box-shadow: #115363 0px -4rem 0px inset;
-}
-
-[data-theme="ocean"] .highlight {
-  box-shadow: #115363 0px -1rem 0px inset;
-  transition: box-shadow 0.3s ease-out 0s;
-}
-
 option {
   background-color: #ffffff;
-}
-
-[data-theme="ocean"] option {
-  background-color: #115363;
 }
 
 [data-theme="night"] option {
@@ -45,10 +32,6 @@ option {
   background-image: url("/404night.svg");
 }
 
-[data-theme="ocean"] .errornotfound {
-  background-image: url("/404ocean.svg");
-}
-
 .logo-lynx {
   background-image: url("/logowinter.png");
   background-size: 100%;
@@ -59,7 +42,50 @@ option {
   background-size: 100%;
 }
 
-[data-theme="ocean"] .logo-lynx {
-  background-image: url("/logoocean.png");
-  background-size: 100%;
+@keyframes magic-text {
+  from {
+    background-position: 400% center;
+  }
+
+  to {
+    background-position: 100% center;
+  }
+}
+
+.magic:hover {
+  animation-play-state: running;
+}
+
+.magic:not(:hover) {
+  animation: none;
+}
+
+[data-theme="night"] .magic:hover {
+  animation-play-state: running;
+}
+
+[data-theme="night"] .magic:not(:hover) {
+  animation: none;
+}
+
+.magic {
+  animation: magic-text 1.8s ease-in-out infinite paused;
+  background: linear-gradient(100deg, #394e6a 10%, #fff 30%, #394e6a 70%);
+  background-size: 300%;
+  background-position: 400% center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
+[data-theme="night"] .magic {
+  animation: magic-text 1.8s ease-in-out infinite paused;
+  background: linear-gradient(100deg, #b4c6ef 10%, #141d33 30%, #b4c6ef 70%);
+  background-size: 300%;
+  background-position: -50% center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
 }
