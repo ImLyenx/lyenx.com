@@ -43,7 +43,7 @@ import { socialItems } from "../data/socials";
     </label>
     <ul
       tabindex="0"
-      class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 border-solid border-2 border-secondary"
+      class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 border-solid border-2 border-secondary -z-50"
     >
       <ul class="menu menu-vertical">
         {
@@ -76,7 +76,9 @@ import { socialItems } from "../data/socials";
           }
         </ul>
       </ul>
-      <li><ToggleTheme /></li>
+      <li class="flex flex-row items-center">
+        <ToggleTheme />&ThickSpace; Theme
+      </li>
     </ul>
   </div>
 </nav>

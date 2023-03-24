@@ -18,3 +18,13 @@ const {
   crossorigin="anonymous"
 ></script>
 <script src="https://cdn.jsdelivr.net/npm/theme-change@2.2.0/index.js"></script>
+<script is:inline>
+  // This script prevents the FART effect.
+  if (!localStorage.getItem("theme")) {
+    // do nothing because using 'return' breaks the script for some reason
+  } else
+    document.documentElement.setAttribute(
+      "data-theme",
+      localStorage.getItem("theme")
+    );
+</script>

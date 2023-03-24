@@ -24,14 +24,6 @@ option {
   background-color: #0f1729;
 }
 
-.errornotfound {
-  background-image: url("/404winter.svg");
-}
-
-[data-theme="night"] .errornotfound {
-  background-image: url("/404night.svg");
-}
-
 .logo-lynx {
   background-image: url("/logowinter.png");
   background-size: 100%;
@@ -48,7 +40,7 @@ option {
   }
 
   to {
-    background-position: 100% center;
+    background-position: 250% center;
   }
 }
 
@@ -69,7 +61,7 @@ option {
 }
 
 .magic {
-  animation: magic-text 1.8s ease-in-out infinite paused;
+  animation: magic-text 1.4s ease-in-out paused;
   background: linear-gradient(100deg, #394e6a 10%, #fff 30%, #394e6a 70%);
   background-size: 300%;
   background-position: 400% center;
@@ -80,7 +72,7 @@ option {
 }
 
 [data-theme="night"] .magic {
-  animation: magic-text 1.8s ease-in-out infinite paused;
+  animation: magic-text 1.4s ease-in-out paused;
   background: linear-gradient(100deg, #b4c6ef 10%, #141d33 30%, #b4c6ef 70%);
   background-size: 300%;
   background-position: -50% center;
@@ -89,3 +81,5 @@ option {
   -webkit-text-fill-color: transparent;
   white-space: nowrap;
 }
+
+/* ! REWRITE EVERYTHING USING VARIABLES THAT CHANGE WITH THE THEME INSTEAD OF DUPLICATING EVERY ELEMENT https://github.com/saadeghi/theme-change#css */

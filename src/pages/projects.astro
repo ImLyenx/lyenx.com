@@ -1,0 +1,35 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
+const projectsEntries = await getCollection("projects");
+---
+
+<MainLayout title="Projects">
+  <div class=" max-w-max mx-auto md:static md:z-0 relative -z-10">
+    <div class="pt-16 mb-8">
+      <h1 class="font-extrabold text-4xl">My Projects</h1>
+    </div>
+    <div class="card-container flex flex-col gap-8">
+      {
+        projectsEntries.map((entry) => (
+          <div class="card md:card-side shadow-2xl max-w-fit mx-auto">
+            <div class="card-body gap-4">
+              <h2 class="card-title pb-1 border-b-[1px] border-base-content"><a class="magic font-extrabold" href={`/projects/${entry.slug}`}>{entry.data.title}</a></h2>
+              <div class="flex flex-row gap-3 overflow-x-auto md:overflow-x-hidden pb-4">
+                <div class="bg-accent text-xs text-accent-content rounded-md px-2 py-1">{entry.data.type}</div>&centerdot;
+                {entry.data.tags.map(tag => (
+                  <div class="bg-secondary text-xs text-secondary-content rounded-md px-2 py-1">{tag}</div>
+                  ))}
+                  </div>
+                  <p>{entry.data.description}</p>
+                  <div class="card-actions">
+                    <div class="tooltip tooltip-bottom" data-tip="View on GitHub"><a href=`https://github.com/${entry.data.github}` class="btn btn-ghost rounded-xl text-lg"><i class="fa fa-github" />&ThinSpace; Source</a></div>
+                {entry.data.demo ? <div class="tooltip tooltip-bottom" data-tip="Try it now !"><a href={entry.data.demo} class="btn btn-ghost text-lg"><i class="fa-solid fa-arrow-up-right-from-square" />&ThinSpace; Demo</a></div> : <div></div>}
+                </div>
+            </div>
+            </div>
+            ))
+        }
+    </div>
+  </div>
+</MainLayout>
