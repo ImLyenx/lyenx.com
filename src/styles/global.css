@@ -1,37 +1,61 @@
+:root {
+  --highlight-color: #a992f7;
+  --option-bg-color: #ffffff;
+  --logo-image: url("/logowinter.png");
+  --gradient-start: #394e6a;
+  --gradient-mid: #fff;
+  --gradient-end: #394e6a;
+}
+
+[data-theme="night"] {
+  --highlight-color: #828ef8b4;
+  --option-bg-color: #0f1729;
+  --logo-image: url("/logonight.png");
+  --gradient-start: #b4c6ef;
+  --gradient-mid: #141d33;
+  --gradient-end: #b4c6ef;
+}
+
 .highlight:hover {
-  box-shadow: #a992f7 0px -4rem 0px inset;
+  box-shadow: var(--highlight-color) 0px -4rem 0px inset;
 }
 
 .highlight {
-  box-shadow: #a992f7 0px -1rem 0px inset;
-  transition: box-shadow 0.3s ease-out 0s;
-}
-
-[data-theme="night"] .highlight:hover {
-  box-shadow: #828ef8b4 0px -4rem 0px inset;
-}
-
-[data-theme="night"] .highlight {
-  box-shadow: #828df8b4 0px -1rem 0px inset;
+  box-shadow: var(--highlight-color) 0px -1rem 0px inset;
   transition: box-shadow 0.3s ease-out 0s;
 }
 
 option {
-  background-color: #ffffff;
-}
-
-[data-theme="night"] option {
-  background-color: #0f1729;
+  background-color: var(--option-bg-color);
 }
 
 .logo-lynx {
-  background-image: url("/logowinter.png");
+  background-image: var(--logo-image);
   background-size: 100%;
 }
 
-[data-theme="night"] .logo-lynx {
-  background-image: url("/logonight.png");
-  background-size: 100%;
+.magic:hover {
+  animation-play-state: running;
+}
+
+.magic:not(:hover) {
+  animation: none;
+}
+
+.magic {
+  animation: magic-text 1.4s ease-in-out paused;
+  background: linear-gradient(
+    100deg,
+    var(--gradient-start) 10%,
+    var(--gradient-mid) 30%,
+    var(--gradient-end) 70%
+  );
+  background-size: 300%;
+  background-position: -50% center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
 }
 
 @keyframes magic-text {
@@ -43,43 +67,3 @@ option {
     background-position: 250% center;
   }
 }
-
-.magic:hover {
-  animation-play-state: running;
-}
-
-.magic:not(:hover) {
-  animation: none;
-}
-
-[data-theme="night"] .magic:hover {
-  animation-play-state: running;
-}
-
-[data-theme="night"] .magic:not(:hover) {
-  animation: none;
-}
-
-.magic {
-  animation: magic-text 1.4s ease-in-out paused;
-  background: linear-gradient(100deg, #394e6a 10%, #fff 30%, #394e6a 70%);
-  background-size: 300%;
-  background-position: 400% center;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  white-space: nowrap;
-}
-
-[data-theme="night"] .magic {
-  animation: magic-text 1.4s ease-in-out paused;
-  background: linear-gradient(100deg, #b4c6ef 10%, #141d33 30%, #b4c6ef 70%);
-  background-size: 300%;
-  background-position: -50% center;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  white-space: nowrap;
-}
-
-/* ! REWRITE EVERYTHING USING VARIABLES THAT CHANGE WITH THE THEME INSTEAD OF DUPLICATING EVERY ELEMENT https://github.com/saadeghi/theme-change#css */
