@@ -1,60 +1,26 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <MainLayout title="Home">
-  <div id="header" class="flex md:flex-row flex-col">
-    <div
-      id="title"
-      class="md:pt-16 pt-8 md:text-6xl text-4xl align-bottom flex flex-col"
-    >
-      <span class="pt-8 md:pt-0 md:text-6xl text-5xl"
-        >Hey! I'm <span class="inline-block font-extrabold w-fit magic"
-          >Eric</span
-        >
+  <div id="header" class="flex flex-col md:flex-row">
+    <div id="title" class="flex flex-col pt-8 align-bottom text-2xl md:pt-16">
+      <span class="pt-8 text-6xl md:pt-0 md:text-8xl"
+        >Hey there, I'm <span class="magic font-bold">Eric.</span>
       </span>
 
-      <span class="mt-8 md:pt-0 md:text-4xl text-2xl"
-        >But you can call me <span
-          class="inline-block font-extrabold w-fit magic">Lyenx</span
-        >
+      <span class="mt-8 text-4xl md:pt-0 md:text-5xl"
+        >Also known as <span class="magic font-bold">Lyenx.</span>
       </span>
 
-      <p class="text-3xl md:mt-24 mt-16">I'm a <span id="writer"></span></p>
-    </div>
-    <div
-      id="test"
-      class="outline outline-red-800 outline-2 h-[60vh] w-auto md:w-[528px] mt-16 md:ml-auto"
-    >
+      <p class="mt-16 flex gap-2 text-3xl md:mt-24 md:text-4xl">
+        I'm a <span class="magic">developer,</span>
+      </p>
+      <p class="mt-1 md:mt-3">
+        but also a student, a musician, a gamer, a nerd and all sorts of things,
+        really.
+      </p>
     </div>
   </div>
-  <script>
-    import Typewriter from "typewriter-effect/dist/core";
-    document.addEventListener("DOMContentLoaded", () => {
-      const typed = document.getElementById("writer");
-      const tw = new Typewriter(typed, {
-        loop: true,
-        autoStart: true,
-      });
-      tw.typeString(
-        "student &centerdot; <span class='magic'><i class='fa fa-graduation-cap' /></span>"
-      )
-        .pauseFor("3000")
-        .deleteChars("11")
-        .pauseFor("200")
-        .typeString(
-          "developer &centerdot; <span class='magic'><i class='fa fa-code' /></span>"
-        )
-        .pauseFor("3000")
-        .deleteChars("13")
-        .pauseFor("200")
-        .typeString(
-          "guitarist &centerdot; <span class='magic'><i class='fa fa-guitar' /></span>"
-        )
-        .pauseFor("3000")
-        .deleteChars("13")
-        .pauseFor("200")
-        .start();
-    });
-  </script>
 </MainLayout>

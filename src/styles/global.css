@@ -1,19 +1,9 @@
 :root {
-  --highlight-color: #a992f7;
-  --option-bg-color: #ffffff;
   --logo-image: url("/logowinter.png");
-  --gradient-start: #394e6a;
-  --gradient-mid: #fff;
-  --gradient-end: #394e6a;
 }
 
 [data-theme="night"] {
-  --highlight-color: #828ef8b4;
-  --option-bg-color: #0f1729;
   --logo-image: url("/logonight.png");
-  --gradient-start: #b4c6ef;
-  --gradient-mid: #141d33;
-  --gradient-end: #b4c6ef;
 }
 
 .highlight:hover {
@@ -34,36 +24,39 @@ option {
   background-size: 100%;
 }
 
-.magic:hover {
-  animation-play-state: running;
-}
-
-.magic:not(:hover) {
-  animation: none;
-}
-
 .magic {
-  animation: magic-text 1.4s ease-in-out paused;
+  display: inline-block;
   background: linear-gradient(
-    100deg,
-    var(--gradient-start) 10%,
-    var(--gradient-mid) 30%,
-    var(--gradient-end) 70%
-  );
-  background-size: 300%;
-  background-position: -50% center;
-  background-clip: text;
+      100deg,
+      oklch(var(--bc)),
+      oklch(var(--su)),
+      oklch(var(--bc))
+    )
+    0 0 / 300% 100%;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  white-space: nowrap;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  background-position: 0 0;
+  transition: background-position 1s ease-out;
+}
+[data-theme="night"] .magic {
+  display: inline-block;
+  background: linear-gradient(
+      100deg,
+      oklch(var(--bc)),
+      oklch(var(--s)),
+      oklch(var(--bc))
+    )
+    0 0 / 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  background-position: 0 0;
+  transition: background-position 1s ease-out;
 }
 
-@keyframes magic-text {
-  from {
-    background-position: 400% center;
-  }
-
-  to {
-    background-position: 250% center;
-  }
+.magic:hover {
+  background-position: -100% 0;
 }

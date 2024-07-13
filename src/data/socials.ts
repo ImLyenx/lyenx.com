@@ -1,17 +1,17 @@
 export const socialItems = [
-    {
-        label: 'GitHub',
-        href: 'https://github.com/ImLyenx',
-        icon: 'fa fa-github text-2xl',
-    },
-    {
-        label: 'Discord',
-        href: '/',
-        icon: 'fa-brands fa-discord text-2xl',
-    },
-    {
-        label: 'Resume',
-        href: '/resume',
-        icon: 'fa-solid fa-user-graduate text-2xl',
-    },
-]
+  {
+    label: "GitHub",
+    href: "https://github.com/ImLyenx",
+    icon: "carbon:logo-github",
+  },
+  {
+    label: "Discord",
+    href: "/",
+    icon: "carbon:logo-discord",
+  },
+  {
+    label: "Resume",
+    href: "/resume",
+    icon: "carbon:result",
+  },
+];

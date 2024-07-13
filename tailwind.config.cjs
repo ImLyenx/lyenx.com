@@ -6,16 +6,6 @@ module.exports = {
       fontFamily: {
         sans: ['"Poppins"', "sans-serif"],
       },
-      colors: {
-        "custom-blue-dark": "#022B3A",
-        "custom-blue-mid": "#115363",
-        "custom-blue-light": "#1F7A8C",
-        "custom-blue-lightest": "#6FABC2",
-        "custom-white-darkest": "#BFDBF7",
-        "custom-white-dark": "#E1E5F2",
-        "custom-white-mid": "#F0F2F9",
-        "custom-white-light": "#FFFFFF",
-      },
       keyframes: {
         boxshadow: {
           "0%, 100%": { "box-shadow": "#463aa1 0px -1rem 0px inset" },
