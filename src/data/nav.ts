@@ -11,8 +11,4 @@ export const navItems = [
     href: "/skills",
     label: "Skills",
   },
-  {
-    href: "/contact",
-    label: "Contact",
-  },
 ];

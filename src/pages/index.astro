@@ -1,26 +1,46 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import { Icon } from "astro-icon/components";
+import { socialItems } from "../data/socials";
 ---
 
 <MainLayout title="Home">
   <div id="header" class="flex flex-col md:flex-row">
     <div id="title" class="flex flex-col pt-8 align-bottom text-2xl md:pt-16">
-      <span class="pt-8 text-6xl md:pt-0 md:text-8xl"
-        >Hey there, I'm <span class="magic font-bold">Eric.</span>
+      <span class="mb-3 text-2xl font-bold text-primary md:text-3xl"
+        >Hey there, I'm-
       </span>
-
+      <span
+        class="text-7xl font-bold leading-[1] text-base-content dark:text-white md:text-[10rem]"
+        >Eric Hubert.</span
+      >
       <span class="mt-8 text-4xl md:pt-0 md:text-5xl"
-        >Also known as <span class="magic font-bold">Lyenx.</span>
+        >Also known as <span class="font-bold text-base-content dark:text-white"
+          >Lyenx.</span
+        >
       </span>
 
-      <p class="mt-16 flex gap-2 text-3xl md:mt-24 md:text-4xl">
-        I'm a <span class="magic">developer,</span>
+      <p class="mt-16 gap-2 text-2xl md:mt-24 md:text-3xl">
+        <span class="font-bold text-base-content dark:text-white"
+          >Full-stack developer,</span
+        >
+        <span class=""
+          >student, musician, gamer, nerd and all sorts of things.</span
+        >
       </p>
-      <p class="mt-1 md:mt-3">
-        but also a student, a musician, a gamer, a nerd and all sorts of things,
-        really.
-      </p>
+      <div class="mt-16 flex gap-2">
+        {
+          socialItems.map(({ href, label, icon }) => (
+            <a
+              href={href}
+              class="btn btn-active btn-sm text-sm md:h-12 md:min-h-12 md:text-lg"
+            >
+              <Icon name={icon} class="text-base text-primary md:text-2xl" />
+              {label}
+            </a>
+          ))
+        }
+      </div>
     </div>
   </div>
 </MainLayout>

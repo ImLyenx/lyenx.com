@@ -6,52 +6,84 @@ import { Icon } from "astro-icon/components";
 ---
 
 <MainLayout title="Projects">
-  <div class="relative -z-10 mx-auto max-w-max md:static md:z-0">
+  <div class="-z-10 mx-auto max-w-max md:z-0">
     <div class="mb-8 pt-16">
       <h1 class="text-4xl font-extrabold">My Projects</h1>
     </div>
-    <div class="card-container flex flex-col gap-8">
+    <div class="card-container flex flex-col gap-8 md:grid md:grid-cols-2">
       {
         projectsEntries.map((entry) => (
           <div class="card mx-auto max-w-fit shadow-2xl md:card-side">
-            <div class="card-body gap-4">
-              <h2 class="card-title border-b-[1px] border-base-content pb-1">
-                <a
-                  class="magic font-extrabold"
-                  href={`/projects/${entry.slug}`}
-                >
-                  {entry.data.title}
-                </a>
-              </h2>
-              <div class="flex flex-row gap-3 overflow-x-auto pb-4 md:overflow-x-hidden">
-                <div class="badge badge-accent py-2">{entry.data.type}</div>
-                &centerdot;
+            <div class="card-body">
+              <div class="flex justify-between">
+                <h2 class="card-title">
+                  <a class="font-extrabold" href={`/projects/${entry.slug}`}>
+                    {entry.data.title}
+                  </a>
+                </h2>
+                <div class="card-actions">
+                  {entry.data.github ? (
+                    <div
+                      class="tooltip tooltip-bottom"
+                      data-tip="View on GitHub"
+                    >
+                      <a
+                        href={"https://github.com/" + entry.data.github}
+                        class="btn btn-ghost btn-sm rounded-xl"
+                      >
+                        <Icon name="carbon:logo-github" class="text-xl" />
+                      </a>
+                    </div>
+                  ) : (
+                    <div
+                      class="tooltip tooltip-bottom tooltip-error cursor-not-allowed"
+                      data-tip="This project is closed-source."
+                    >
+                      <a href="#" class="btn btn-disabled btn-sm">
+                        <Icon name="carbon:logo-github" class="text-xl" />
+                      </a>
+                    </div>
+                  )}
+                  {entry.data.demo ? (
+                    <div class="tooltip tooltip-bottom" data-tip="Try it now !">
+                      <a href={entry.data.demo} class="btn btn-ghost btn-sm">
+                        <Icon name="carbon:link" class="text-xl" />
+                      </a>
+                    </div>
+                  ) : (
+                    <div
+                      class="tooltip tooltip-bottom tooltip-error cursor-not-allowed"
+                      data-tip="No demo available."
+                    >
+                      <a href="#" class="btn btn-disabled btn-sm">
+                        <Icon name="carbon:link" class="text-xl" />
+                      </a>
+                    </div>
+                  )}
+                </div>
+              </div>
+              <div class="flex flex-row gap-3 overflow-x-auto md:overflow-x-hidden">
                 {entry.data.tags.map((tag) => (
-                  <div class="badge badge-secondary py-2">{tag}</div>
+                  <div
+                    class="badge badge-secondary rounded-md py-3"
+                    style={
+                      "color:" +
+                      tag.color +
+                      "; background-color:" +
+                      tag.color +
+                      "30" +
+                      "; border-color:" +
+                      tag.color +
+                      "30;"
+                    }
+                  >
+                    <Icon name={tag.icon} class="mr-2" />
+                    {tag.name}
+                  </div>
                 ))}
               </div>
+              <div class="divider m-0 -mt-1" />
               <p>{entry.data.description}</p>
-              <div class="card-actions">
-                <div class="tooltip tooltip-bottom" data-tip="View on GitHub">
-                  <a
-                    href={"https://github.com/" + entry.data.github}
-                    class="btn btn-ghost rounded-xl text-lg"
-                  >
-                    <Icon name="carbon:logo-github" class="text-3xl" />
-                    &ThinSpace; Source
-                  </a>
-                </div>
-                {entry.data.demo ? (
-                  <div class="tooltip tooltip-bottom" data-tip="Try it now !">
-                    <a href={entry.data.demo} class="btn btn-ghost text-lg">
-                      <i class="fa-solid fa-arrow-up-right-from-square" />
-                      &ThinSpace; Demo
-                    </a>
-                  </div>
-                ) : (
-                  <div />
-                )}
-              </div>
             </div>
           </div>
         ))

@@ -6,9 +6,11 @@ const projectsCollection = defineCollection({
     image: z.string().optional(),
     type: z.enum(["School", "Personal"]),
     isWIP: z.boolean().default(false),
-    tags: z.array(z.string()),
+    tags: z.array(
+      z.object({ name: z.string(), color: z.string(), icon: z.string() }),
+    ),
     description: z.string(),
-    github: z.string(),
+    github: z.string().optional(),
     demo: z.string().optional(),
   }),
 });

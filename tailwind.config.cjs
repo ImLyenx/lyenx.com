@@ -26,5 +26,5 @@ module.exports = {
   daisyui: {
     themes: ["winter", "night"],
   },
-  darkMode: ["class", '[data-theme="winter"]'],
+  darkMode: ["class", '[data-theme="night"]'],
 };

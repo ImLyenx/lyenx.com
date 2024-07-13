@@ -10,6 +10,7 @@ export default defineConfig({
     icon({
       include: {
         carbon: ["*"],
+        "simple-icons": ["*"],
       },
     }),
   ],

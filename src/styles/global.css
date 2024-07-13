@@ -24,7 +24,7 @@ option {
   background-size: 100%;
 }
 
-.magic {
+/* .magic {
   display: inline-block;
   background: linear-gradient(
       100deg,
@@ -59,4 +59,11 @@ option {
 
 .magic:hover {
   background-position: -100% 0;
+} */
+
+.magic {
+  @apply bg-gradient-to-r from-base-content to-success bg-clip-text text-transparent brightness-[.7];
+}
+[data-theme="night"] .magic {
+  @apply bg-gradient-to-r from-base-content to-secondary bg-clip-text text-transparent brightness-100;
 }

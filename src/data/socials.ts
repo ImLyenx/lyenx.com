@@ -5,13 +5,13 @@ export const socialItems = [
     icon: "carbon:logo-github",
   },
   {
-    label: "Discord",
-    href: "/",
-    icon: "carbon:logo-discord",
+    label: "LinkedIn",
+    href: "https://linkedin.com/in/huberic",
+    icon: "carbon:logo-linkedin",
   },
   {
-    label: "Resume",
-    href: "/resume",
-    icon: "carbon:result",
+    label: "Contact",
+    href: "/contact",
+    icon: "carbon:email",
   },
 ];
