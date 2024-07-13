@@ -6,6 +6,7 @@ tags:
   [
     { "name": "Python", "color": "#4584b6", icon: "simple-icons:python" },
     { "name": "Gitlab", "color": "#fc6d26", icon: "simple-icons:gitlab" },
+    { "name": "Firebase", "color": "#FFCB2D", "icon": "simple-icons:firebase" },
   ]
 description: Fully functional Minesweeper game I built with two of my friends, playable either using a CLI or the Python library Tkinter.
 github: ImLyenx/minesweeper
