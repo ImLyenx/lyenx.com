@@ -24,43 +24,6 @@ option {
   background-size: 100%;
 }
 
-/* .magic {
-  display: inline-block;
-  background: linear-gradient(
-      100deg,
-      oklch(var(--bc)),
-      oklch(var(--su)),
-      oklch(var(--bc))
-    )
-    0 0 / 300% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-weight: bold;
-  background-position: 0 0;
-  transition: background-position 1s ease-out;
-}
-[data-theme="night"] .magic {
-  display: inline-block;
-  background: linear-gradient(
-      100deg,
-      oklch(var(--bc)),
-      oklch(var(--s)),
-      oklch(var(--bc))
-    )
-    0 0 / 300% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-weight: bold;
-  background-position: 0 0;
-  transition: background-position 1s ease-out;
-}
-
-.magic:hover {
-  background-position: -100% 0;
-} */
-
 .magic {
   @apply bg-gradient-to-r from-base-content to-success bg-clip-text text-transparent brightness-[.7];
 }
