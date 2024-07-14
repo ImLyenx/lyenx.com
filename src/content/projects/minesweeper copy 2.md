@@ -1,6 +1,5 @@
 ---
-title: Minesweeper
-image: "/assets/thumbnails/minesweeper.png"
+title: Minesweeper c
 type: School
 tags:
   [
