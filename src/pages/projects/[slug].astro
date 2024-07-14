@@ -14,7 +14,16 @@ const { Content } = await entry.render();
 ---
 
 <MainLayout title={entry.data.title}>
-  <div class="prose prose-xl mx-auto max-w-3xl pt-16 prose-code:prose-xl">
-    <Content />
+  <div class="flex flex-col-reverse gap-10 md:flex-row">
+    <div class="prose prose-xl max-w-3xl pt-8 prose-code:prose-xl">
+      <h1>{entry.data.title}</h1>
+      <div class="divider"></div>
+      <Content />
+    </div>
+    <div>
+      <h2 class="sticky top-12 mt-8 text-xl underline underline-offset-4">
+        Table of contents :
+      </h2>
+    </div>
   </div>
 </MainLayout>

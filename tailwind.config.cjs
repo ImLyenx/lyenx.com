@@ -24,7 +24,21 @@ module.exports = {
   },
   plugins: [require("daisyui"), require("@tailwindcss/typography")],
   daisyui: {
-    themes: ["winter", "night"],
+    themes: [
+      {
+        winter: {
+          ...require("daisyui/src/theming/themes")["winter"],
+          "base-content": "#222e3f",
+        },
+      },
+      {
+        night: {
+          ...require("daisyui/src/theming/themes")["night"],
+          "base-100": "#0d1221",
+          primary: "#5ce18c",
+        },
+      },
+    ],
   },
   darkMode: ["class", '[data-theme="night"]'],
 };

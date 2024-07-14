@@ -6,8 +6,6 @@ description: Fully functional Minesweeper game I built with two of my friends, p
 github: ImLyenx/minesweeper
 ---
 
-# About this project
-
 ## Context
 
 This project was made in early-mid 2022 with two of my friends. It was build for a project assigned in Computer Science class in high school (Spé NSI if you are French).

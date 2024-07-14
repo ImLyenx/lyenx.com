@@ -4,17 +4,13 @@ image: "/assets/thumbnails/minesweeper.png"
 tags:
   [
     { "name": "Vite", "color": "#ffab03", icon: "simple-icons:vite" },
-    { "name": "React", "color": "#61DBFB", icon: "simple-icons:react" },
+    { "name": "React", "color": "#06bfef", icon: "simple-icons:react" },
     { "name": "Python", "color": "#4584b6", icon: "simple-icons:python" },
     { "name": "AIOHTTP", "color": "#2c5bb4", icon: "simple-icons:aiohttp" },
   ]
 description: Recreation of the VALORANT in-game interface (Main menu, Store, Collection)
 demo: https://val.lyenx.com
 ---
-
-# About this project
-
-<div class="divider"></div>
 
 ## Context
 
