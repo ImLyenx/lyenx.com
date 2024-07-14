@@ -1,0 +1,22 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import TOC from "@/components/TOC.astro";
+
+const { frontmatter, headings } = Astro.props;
+---
+
+<MainLayout title={frontmatter.title}>
+  <div class="flex flex-col-reverse gap-10 md:flex-row">
+    <div class="prose prose-xl max-w-3xl pt-8 prose-code:prose-xl">
+      <h1>{frontmatter.title}</h1>
+      <div class="divider"></div>
+      <slot />
+    </div>
+    <div>
+      <h2 class="sticky top-12 mt-8 text-xl font-semibold">
+        Table of contents :
+        <TOC headings={headings} />
+      </h2>
+    </div>
+  </div>
+</MainLayout>

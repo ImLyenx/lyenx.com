@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/PostLayout.astro
 title: Valorant Clone
 image: "/assets/thumbnails/minesweeper.png"
 tags:

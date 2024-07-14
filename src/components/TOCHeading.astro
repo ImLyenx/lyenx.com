@@ -1,0 +1,18 @@
+---
+const { heading } = Astro.props;
+---
+
+<li style={"margin-left: " + (1 + heading.depth / 10) + "rem;"}>
+  <a href={"#" + heading.slug}>
+    {heading.text}
+  </a>
+  {
+    heading.subheadings.length > 0 && (
+      <ul class="list-disc">
+        {heading.subheadings.map((subheading: any) => (
+          <Astro.self heading={subheading} />
+        ))}
+      </ul>
+    )
+  }
+</li>
