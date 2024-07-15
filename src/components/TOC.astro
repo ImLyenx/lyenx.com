@@ -28,8 +28,8 @@ function buildHierarchy(headings: any) {
 
 {
   toc && toc.length > 0 && (
-    <div class="mt-2 text-lg font-normal">
-      <ul class="list-disc">
+    <div class="mt-2 border-l-4 border-primary text-lg font-normal">
+      <ul class="flex flex-col gap-1">
         {toc.map((heading) => (
           <TOCHeading heading={heading} />
         ))}

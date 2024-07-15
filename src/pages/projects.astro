@@ -29,6 +29,8 @@ import { Icon } from "astro-icon/components";
                     >
                       <a
                         href={"https://github.com/" + entry.data.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         class="btn btn-ghost btn-sm rounded-xl"
                       >
                         <Icon name="carbon:logo-github" class="text-xl" />
@@ -37,7 +39,7 @@ import { Icon } from "astro-icon/components";
                   ) : (
                     <div
                       class="tooltip tooltip-bottom tooltip-error cursor-not-allowed"
-                      data-tip="This project is closed-source."
+                      data-tip="This project is closed-source"
                     >
                       <a href="#" class="btn btn-disabled btn-sm">
                         <Icon name="carbon:logo-github" class="text-xl" />
@@ -45,15 +47,23 @@ import { Icon } from "astro-icon/components";
                     </div>
                   )}
                   {entry.data.demo ? (
-                    <div class="tooltip tooltip-bottom" data-tip="Try it now !">
-                      <a href={entry.data.demo} class="btn btn-ghost btn-sm">
+                    <div
+                      class="tooltip tooltip-bottom"
+                      data-tip="Check it out!"
+                    >
+                      <a
+                        href={entry.data.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-ghost btn-sm"
+                      >
                         <Icon name="carbon:link" class="text-xl" />
                       </a>
                     </div>
                   ) : (
                     <div
                       class="tooltip tooltip-bottom tooltip-error cursor-not-allowed"
-                      data-tip="No demo available."
+                      data-tip="No demo available"
                     >
                       <a href="#" class="btn btn-disabled btn-sm">
                         <Icon name="carbon:link" class="text-xl" />

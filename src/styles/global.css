@@ -30,3 +30,7 @@ option {
 [data-theme="night"] .magic {
   @apply bg-gradient-to-r from-base-content to-secondary bg-clip-text text-transparent brightness-100;
 }
+
+.toc-link.active {
+  @apply underline underline-offset-4;
+}

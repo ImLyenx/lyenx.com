@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
+import sectionize from "@hbsnow/rehype-sectionize";
 
 import icon from "astro-icon";
 
@@ -14,4 +15,7 @@ export default defineConfig({
       },
     }),
   ],
+  markdown: {
+    rehypePlugins: [sectionize],
+  },
 });
