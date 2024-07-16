@@ -2,6 +2,7 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 import { Icon } from "astro-icon/components";
 import { socialItems } from "@/data/socials";
+import { skills } from "@/data/skills";
 ---
 
 <MainLayout title="Home">
@@ -10,20 +11,15 @@ import { socialItems } from "@/data/socials";
       <span class="mb-3 text-2xl font-bold text-primary md:text-3xl"
         >Hey there, I'm-
       </span>
-      <span
-        class="text-7xl font-bold leading-[1] text-base-content dark:text-white md:text-[10rem]"
+      <span class="text-contrast text-7xl font-bold leading-[1] md:text-[10rem]"
         >Eric Hubert.</span
       >
       <span class="mt-8 text-4xl md:pt-0 md:text-5xl"
-        >Also known as <span class="font-bold text-base-content dark:text-white"
-          >Lyenx.</span
-        >
+        >Also known as <span class="text-contrast font-bold">Lyenx.</span>
       </span>
 
       <p class="mt-16 gap-2 text-2xl md:mt-24 md:text-3xl">
-        <span class="font-bold text-base-content dark:text-white"
-          >Full-stack developer,</span
-        >
+        <span class="text-contrast font-bold">Full-stack developer,</span>
         <span class=""
           >student, musician, gamer, nerd and all sorts of things.</span
         >
@@ -38,6 +34,34 @@ import { socialItems } from "@/data/socials";
               <Icon name={icon} class="text-base text-primary md:text-2xl" />
               {label}
             </a>
+          ))
+        }
+      </div>
+      <div class="mt-24 flex flex-col gap-4">
+        <h2 class="text-contrast border-l-4 border-l-primary pl-4 font-bold">
+          About me
+        </h2>
+        <p class="text-lg">About me</p>
+      </div>
+      <div class="mt-24 flex flex-col gap-6">
+        <h2 class="text-contrast border-l-4 border-l-primary pl-4 font-bold">
+          Tech I use
+        </h2>
+        {
+          skills.map(({ name, items }) => (
+            <div class="flex flex-col gap-3">
+              <h3 class="text-xl">&middot; {name} :</h3>
+              <div class="grid grid-cols-5 gap-4 md:flex md:gap-4">
+                {items.map(({ label, icon }) => (
+                  <div
+                    class="tooltip tooltip-bottom tooltip-primary cursor-help"
+                    data-tip={label}
+                  >
+                    <Icon name={icon} class="text-6xl" />
+                  </div>
+                ))}
+              </div>
+            </div>
           ))
         }
       </div>

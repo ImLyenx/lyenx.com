@@ -12,6 +12,7 @@ export default defineConfig({
       include: {
         carbon: ["*"],
         "simple-icons": ["*"],
+        "skill-icons": ["*"],
       },
     }),
   ],

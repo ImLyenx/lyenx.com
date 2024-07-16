@@ -34,3 +34,7 @@ option {
 .toc-link.active {
   @apply underline underline-offset-4;
 }
+
+.text-contrast {
+  @apply text-black dark:text-white;
+}
