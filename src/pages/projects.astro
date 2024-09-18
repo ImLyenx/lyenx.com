@@ -6,14 +6,14 @@ import { Icon } from "astro-icon/components";
 ---
 
 <MainLayout title="Projects">
-  <div class="-z-10 mx-auto max-w-max md:z-0">
+  <div class="-z-10 mx-auto md:z-0">
     <div class="mb-8 pt-16">
       <h1 class="text-4xl font-extrabold">My Projects</h1>
     </div>
-    <div class="card-container flex flex-col gap-8 md:grid md:grid-cols-2">
+    <div class="card-container grid gap-8 md:grid-cols-[repeat(2,1fr)]">
       {
         projectsEntries.map((entry) => (
-          <div class="card mx-auto max-w-fit shadow-2xl md:card-side">
+          <div class="card w-full shadow-2xl md:card-side">
             <div class="card-body">
               <div class="flex justify-between">
                 <h2 class="card-title">
@@ -31,7 +31,7 @@ import { Icon } from "astro-icon/components";
                         href={"https://github.com/" + entry.data.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="btn btn-ghost btn-sm rounded-xl"
+                        class="btn btn-ghost btn-sm"
                       >
                         <Icon name="carbon:logo-github" class="text-xl" />
                       </a>

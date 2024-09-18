@@ -11,13 +11,13 @@
     "start": "serve dist"
   },
   "dependencies": {
-    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/tailwind": "^5.1.1",
     "@fontsource/inter": "^5.0.19",
     "@iconify-json/carbon": "^1.1.36",
     "@iconify-json/simple-icons": "^1.1.109",
     "@iconify-json/skill-icons": "^1.1.8",
     "@tailwindcss/typography": "^0.5.9",
-    "astro": "^4.11.5",
+    "astro": "^4.15.5",
     "astro-icon": "^1.1.0",
     "serve": "^14.2.3"
   },
@@ -27,5 +27,10 @@
     "prettier": "^3.3.2",
     "prettier-plugin-astro": "^0.14.0",
     "prettier-plugin-tailwindcss": "^0.6.5"
+  },
+  "overrides": {
+    "serve": {
+      "path-to-regexp": "3.3.0"
+    }
   }
 }
