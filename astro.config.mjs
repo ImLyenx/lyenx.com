@@ -4,8 +4,12 @@ import sectionize from "@hbsnow/rehype-sectionize";
 
 import icon from "astro-icon";
 
+import node from "@astrojs/node";
+
 // https://astro.build/config
 export default defineConfig({
+  output: "hybrid",
+
   integrations: [
     tailwind(),
     icon({
@@ -16,7 +20,12 @@ export default defineConfig({
       },
     }),
   ],
+
   markdown: {
     rehypePlugins: [sectionize],
   },
+
+  adapter: node({
+    mode: "standalone",
+  }),
 });
