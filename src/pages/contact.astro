@@ -3,58 +3,59 @@ import MainLayout from "@/layouts/MainLayout.astro";
 ---
 
 <MainLayout title="Contact">
-  <div class="mb-8 md:pt-16 pt-8">
+  <div class="mb-8 md:pt-8 pt-8">
     <h1 class="text-4xl font-extrabold">Contact me</h1>
   </div>
-    <form class="flex flex-col gap-4">
-        <label for="name" class="flex flex-col gap-2">Name:
-        <input type="text" id="name" name="name" class="input input-bordered"></label>
+  <form class="flex flex-col gap-4">
+      <label for="name" class="flex flex-col gap-2">Name:
+      <input type="text" id="name" name="name" class="input input-bordered"></label>
 
-        <label for="email" class="flex flex-col gap-2">Email:
-        <input type="email" id="email" name="email" class="input input-bordered"></label>
+      <label for="email" class="flex flex-col gap-2">Email:
+      <input type="email" id="email" name="email" class="input input-bordered"></label>
 
-        <label for="subject" class="flex flex-col gap-2">Subject:
-        <input type="text" id="subject" name="subject" class="input input-bordered"></label>
+      <label for="subject" class="flex flex-col gap-2">Subject:
+      <input type="text" id="subject" name="subject" class="input input-bordered"></label>
 
-        <label for="message" class="flex flex-col gap-2">Message:
-        <textarea id="message" name="message" class="textarea textarea-bordered" rows="6"></textarea></label>
+      <label for="message" class="flex flex-col gap-2">Message:
+      <textarea id="message" name="message" class="textarea textarea-bordered" rows="6"></textarea></label>
 
-        <button type="submit" class="btn" id="submit">Send</button>
-    </form>
-    <script>
-        import { actions } from 'astro:actions';
-      
-        const form = document.querySelector('form');
-        form?.addEventListener('submit', async (event) => {
-          event.preventDefault();
-          // @ts-ignore
-          document.getElementById("submit").disabled = true;
-          document.getElementById("submit").innerHTML = "<div class='loading loading-ring text-primary' />";
-          const formData = new FormData(form);
-          const { error } = await actions.mail(formData);
-          // @ts-ignore
-          document.getElementById("submit").disabled = false;
-          document.getElementById("submit").innerHTML = "Send";
-          if (!error) {
-            document.getElementById('alert-success').classList.remove('hidden');
+      <button type="submit" class="btn" id="submit">Send</button>
+  </form>
+  <p class="mt-12">You can also send me a message on <span class="tooltip tooltip-primary inline-block font-bold underline underline-offset-3" data-tip="lyenx">Discord</span> or a <span class="tooltip tooltip-primary inline-block font-bold underline underline-offset-3" data-tip="contact@lyenx.com">mail</span>.</p>
+  <script>
+    import { actions } from 'astro:actions';
+  
+    const form = document.querySelector('form');
+    form?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      // @ts-ignore
+      document.getElementById("submit").disabled = true;
+      document.getElementById("submit").innerHTML = "<div class='loading loading-ring text-primary' />";
+      const formData = new FormData(form);
+      const { error } = await actions.mail(formData);
+      // @ts-ignore
+      document.getElementById("submit").disabled = false;
+      document.getElementById("submit").innerHTML = "Send";
+      if (!error) {
+        document.getElementById('alert-success').classList.remove('hidden');
+        setTimeout(() => {
+          document.getElementById('alert-success').classList.add('hidden');
+        }, 5000);
+      } else {
+        if (error.code === "UNAUTHORIZED") {
+          document.getElementById('alert-warning').classList.remove('hidden');
+          setTimeout(() => {
+            document.getElementById('alert-warning').classList.add('hidden');
+          }, 5000);
+        } else {
+            document.getElementById('alert-error').classList.remove('hidden');
             setTimeout(() => {
-              document.getElementById('alert-success').classList.add('hidden');
+              document.getElementById('alert-error').classList.add('hidden');
             }, 5000);
-          } else {
-            if (error.code === "UNAUTHORIZED") {
-              document.getElementById('alert-warning').classList.remove('hidden');
-              setTimeout(() => {
-                document.getElementById('alert-warning').classList.add('hidden');
-              }, 5000);
-            } else {
-                document.getElementById('alert-error').classList.remove('hidden');
-                setTimeout(() => {
-                  document.getElementById('alert-error').classList.add('hidden');
-                }, 5000);
-            }
-          }
-        })
-      </script>
+        }
+      }
+    })
+  </script>
 </MainLayout>
 <div role="alert" class="alert alert-success absolute bottom-8 left-4 w-96 hidden z-50" id="alert-success">
   <svg

@@ -41,7 +41,10 @@ import { skills } from "@/data/skills";
         <h2 class="text-contrast border-l-4 border-l-primary pl-4 font-bold">
           About me
         </h2>
-        <p class="text-lg">About me</p>
+        <p class="text-lg">I'm an 18 years old Full-stack Web Developer based near Paris.</p>
+        <p class="text-lg">I love coding, and computer-related things in general. I've been coding since 2016, first by simply editing HTML files in Notepad, then learning Scratch. More recently, I've been learning a few different technologies, playing some CTFs and having fun with my friends!</p>
+        <p class="text-lg">I sometimes make cool things, you can learn more about them on the <a href="/projects" class=" font-medium underline underline-offset-3">projects</a> page.</p>
+        <p class="text-lg">I am also always open to work, feel free to <a href="/contact" class=" font-medium underline underline-offset-3">send me a message</a>!</p>
       </div>
       <div class="mt-24 flex flex-col gap-6">
         <h2 class="text-contrast border-l-4 border-l-primary pl-4 font-bold">
@@ -54,7 +57,7 @@ import { skills } from "@/data/skills";
               <div class="grid grid-cols-5 gap-4 md:flex md:gap-4">
                 {items.map(({ label, icon }) => (
                   <div
-                    class="tooltip tooltip-bottom tooltip-primary cursor-help"
+                    class="tooltip tooltip-bottom tooltip-primary"
                     data-tip={label}
                   >
                     <Icon name={icon} class="text-6xl" />
