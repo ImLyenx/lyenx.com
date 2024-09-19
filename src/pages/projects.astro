@@ -7,7 +7,7 @@ import { Icon } from "astro-icon/components";
 
 <MainLayout title="Projects">
   <div class="-z-10 mx-auto md:z-0">
-    <div class="mb-8 pt-16">
+    <div class="mb-8 pt-8">
       <h1 class="text-4xl font-extrabold">My Projects</h1>
     </div>
     <div class="card-container grid gap-8 md:grid-cols-[repeat(2,1fr)]">
@@ -21,7 +21,7 @@ import { Icon } from "astro-icon/components";
                     {entry.data.title}
                   </a>
                 </h2>
-                <div class="card-actions">
+                <div class="card-actions min-w-[100px]">
                   {entry.data.github ? (
                     <div
                       class="tooltip tooltip-bottom"
