@@ -13,7 +13,7 @@ const { frontmatter, headings } = Astro.props;
       <slot />
     </div>
     <div id="toc">
-      <h2 class="sticky top-12 mt-8 text-xl font-semibold">
+      <h2 class="md:sticky top-12 mt-8 text-xl font-semibold">
         In this article :
         <TOC headings={headings} />
       </h2>
