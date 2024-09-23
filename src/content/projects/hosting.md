@@ -21,4 +21,8 @@ I started looking towards VPS providers, and I quickly found out that Oracle Clo
 I stuck with it for 8 months, but a few weeks ago, I switched back to Coolify, fundamentally the same software but free, open-source, and extremely popular since February 2024, when [some guy was sent a $104,000 (one hundred and four thousand dollars) bill by Netlify](https://old.reddit.com/r/webdev/comments/1b14bty/netlify_just_sent_me_a_104k_bill_for_a_simple/). The "just use a $5 VPS" community has been growing a lot since then, and I'm one of its most fervent members, *except mine is free*. \
 Anyways, Coolify, that has improved **a lot** since January ([@heyandras](https://x.com/heyandras) you're the goat) + Cloudflare (DDoS protection, DNS, email routing and a lot more random useful things) is basically the perfect setup for any indie developer, but also for high-traffic applications (don't believe me? ask [@levelsio](https://x.com/levelsio)), while also being almost completely free (only thing I pay for is the domain name, and you can get a .com one for like $10 a year).
 
+## What I learned
+
+Through this "long-term" project, I learned to use Linux effectively, navigate the OS, and understand its file system. I also gained experience with Docker containerization, reverse proxys, and learned about SSL/TLS certificates, networking, protocols, security, and DevOps in general.
+
 *PS: Yeah I know the icon on the project card is the C programming language logo, but Simple Icons sadly does not include the real Coolify logo.*

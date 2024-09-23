@@ -35,4 +35,8 @@ The API itself is also protected by Cloudflare, so no attempt at accessing it wi
 
 So when I had my humble Python API working and Riot suddenly decided to nuke it by changing the Authentication methods on every single endpoint, I gave up. My app would now only be a React SPA that displays dummy data.
 
-If you want to see half of my work, you can do so [here](https://val.lyenx.com). You don't need a Riot account, simply press the red button without filling the input fields. Enjoy!
+If you want to check out my work (technically only half of it), you can do so [here](https://val.lyenx.com). You don't need a Riot account, simply press the red button without filling the input fields. Enjoy!
+
+## What I learned
+
+I learned React for the front-end, and I built my first ever Python API for the back-end.
