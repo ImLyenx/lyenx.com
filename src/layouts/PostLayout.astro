@@ -1,0 +1,49 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import TOC from "@/components/TOC.astro";
+
+const { frontmatter, headings } = Astro.props;
+---
+
+<MainLayout title={frontmatter.title}>
+  <div class="flex flex-col-reverse gap-10 lg:flex-row">
+    <div class="prose prose-xl max-w-3xl pt-8 prose-code:prose-xl">
+      <h1>{frontmatter.title}</h1>
+      <div class="divider"></div>
+      <slot />
+    </div>
+    <div id="toc">
+      <h2 class="md:sticky top-12 mt-8 text-xl font-semibold">
+        In this article :
+        <TOC headings={headings} />
+      </h2>
+    </div>
+  </div>
+  <script>
+    function addIntersectionObserver() {
+      const observer = new IntersectionObserver((sections) => {
+        console.log("sections", sections);
+        sections.forEach((section) => {
+          const heading = section.target.querySelector("h2, h3, h4, h5");
+          if (!heading) return;
+          const id = heading.getAttribute("id");
+
+          // Get the link to this section's heading
+          const link = document.querySelector(`div#toc li a[href="#${id}"]`);
+          if (!link) return;
+
+          // Add/remove the .active class based on whether the
+          // section is visible
+          const addRemove = section.intersectionRatio > 0 ? "add" : "remove";
+          link.parentElement.classList[addRemove]("active");
+        });
+      });
+
+      document.querySelectorAll("section").forEach((section) => {
+        observer.observe(section);
+      });
+    }
+
+    addIntersectionObserver();
+  </script>
+</MainLayout>

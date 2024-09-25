@@ -1,20 +1,26 @@
 ---
-import ToggleTheme from "./ToggleTheme.astro";
-import { navItems } from "../data/nav";
-import { socialItems } from "../data/socials";
+import ToggleTheme from "@/components/ToggleTheme.astro";
+import { navItems } from "@/data/nav";
+import { socialItems } from "@/data/socials";
+import { Icon } from "astro-icon/components";
 ---
 
-<nav class="sticky flex py-4 px-8 w-full h-20 items-center">
-  <a href="/" class="btn btn-ghost">
-    <!-- <img src="/icon.svg" alt="logo" class="h-8" /> -->
-    lyenx.com
+<nav class="sticky flex h-20 items-center pt-4">
+  <a href="/" aria-label="Home">
+    <div class="flex h-10 gap-1 text-3xl font-bold">
+      <!-- &#123; -->
+      &lt;
+      <span class="text-4xl text-primary">Lyenx</span>
+      &ThickSpace;/&gt;
+      <!-- &#125; -->
+    </div>
   </a>
 
-  <ul class="hidden md:flex p-0 menu menu-horizontal ml-auto">
+  <ul class="menu menu-horizontal ml-auto hidden gap-1 p-0 md:flex">
     {
       navItems.map(({ href, label }) => (
         <li class="rounded-xl">
-          <a href={href} class="active:bg-base-content/30 active:text-inherit">
+          <a href={href} class="btn btn-ghost my-auto text-lg font-normal">
             {label}
           </a>
         </li>
@@ -23,57 +29,56 @@ import { socialItems } from "../data/socials";
     {
       socialItems.map(({ href, label, icon }) => (
         <li
-          class="rounded-xl tooltip tooltip-bottom tooltip-secondary"
+          class="tooltip tooltip-bottom tooltip-primary rounded-xl"
           data-tip={label}
         >
-          <a href={href} class="active:bg-base-content/30 active:text-inherit">
-            <i class={icon} />
+          <a href={href} aria-label={label} class="btn btn-square btn-ghost">
+            <Icon name={icon} class="text-3xl" />
           </a>
         </li>
       ))
     }
     <li class="rounded-xl"><ToggleTheme /></li>
   </ul>
-  <div class="dropdown dropdown-end md:hidden flex ml-auto">
+  <div class="dropdown dropdown-end ml-auto flex md:hidden">
     <label tabindex="0" class="btn btn-square btn-ghost m-1 text-2xl"
-      ><i class="fa fa-bars"></i>
-    </label>
+      ><Icon name="carbon:menu" class="text-3xl" /></label
+    >
     <ul
       tabindex="0"
-      class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 border-solid border-2 border-secondary"
+      class="menu dropdown-content z-[1] w-52 rounded-box bg-base-100 p-2 shadow-2xl"
     >
       <ul class="menu menu-vertical">
         {
           navItems.map(({ href, label }) => (
-            <li class="rounded-xl">
-              <a
-                href={href}
-                class="active:bg-base-content/30 active:text-inherit"
-              >
+            <li>
+              <a href={href} class="text-lg">
                 {label}
               </a>
             </li>
           ))
         }
-        <ul class="menu menu-horizontal menu-compacty">
+        <ul class="menu menu-horizontal">
           {
             socialItems.map(({ href, label, icon }) => (
               <li
-                class="rounded-xl tooltip tooltip-top tooltip-secondary"
+                class="tooltip tooltip-bottom tooltip-primary"
                 data-tip={label}
               >
-                <a
-                  href={href}
-                  class="active:bg-base-content/30 active:text-inherit"
-                >
-                  <i class={icon} />
+                <a href={href} class="btn btn-square btn-ghost">
+                  <Icon name={icon} class="text-3xl" />
                 </a>
               </li>
             ))
           }
         </ul>
       </ul>
-      <li><ToggleTheme /></li>
+      <li class="menu menu-horizontal">
+        <ToggleTheme /><span class="pointer-events-none my-auto text-lg"
+          >Theme</span
+        >
+      </li>
     </ul>
   </div>
 </nav>
+<div class="divider mt-0"></div>

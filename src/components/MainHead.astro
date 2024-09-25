@@ -12,6 +12,16 @@ const {
 <title>{title + " | Lyenx"}</title>
 
 <link rel="icon" href="/logo.png" />
-<script src="https://kit.fontawesome.com/20ce1f4355.js" crossorigin="anonymous"
-></script>
-<script src="https://cdn.jsdelivr.net/npm/theme-change@2.2.0/index.js"></script>
+<script is:inline>
+  // ☝️ This script prevent the FART effect.
+  if (localStorage.getItem("theme") === null) {
+    document.documentElement.setAttribute("data-theme", "winter");
+  } else
+    document.documentElement.setAttribute(
+      "data-theme",
+      localStorage.getItem("theme"),
+    );
+  // "theme" LocalStorage value is set by the package to remember user preference.
+  // The value is checked and applyed before rendering anything.
+</script>
+<script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>

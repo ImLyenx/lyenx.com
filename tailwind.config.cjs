@@ -4,17 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Poppins"', "sans-serif"],
-      },
-      colors: {
-        "custom-blue-dark": "#022B3A",
-        "custom-blue-mid": "#115363",
-        "custom-blue-light": "#1F7A8C",
-        "custom-blue-lightest": "#6FABC2",
-        "custom-white-darkest": "#BFDBF7",
-        "custom-white-dark": "#E1E5F2",
-        "custom-white-mid": "#F0F2F9",
-        "custom-white-light": "#FFFFFF",
+        sans: ['"Inter"', "sans-serif"],
       },
       keyframes: {
         boxshadow: {
@@ -32,33 +22,23 @@ module.exports = {
       },
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"), require("@tailwindcss/typography")],
   daisyui: {
     themes: [
-      "winter",
-      "night",
       {
-        ocean: {
-          primary: "#6419E6",
-
-          secondary: "#1f7a8c",
-
-          accent: "#1FB2A6",
-
-          neutral: "#191D24",
-
-          "base-100": "#022B3A",
-
-          info: "#3ABFF8",
-
-          success: "#36D399",
-
-          warning: "#FBBD23",
-
-          error: "#F87272",
+        winter: {
+          ...require("daisyui/src/theming/themes")["winter"],
+          "base-content": "#222e3f",
+        },
+      },
+      {
+        night: {
+          ...require("daisyui/src/theming/themes")["night"],
+          "base-100": "#0d1221",
+          primary: "#5ce18c",
         },
       },
     ],
   },
-  darkMode: ["class", '[data-theme="winter"]'],
+  darkMode: ["class", '[data-theme="night"]'],
 };

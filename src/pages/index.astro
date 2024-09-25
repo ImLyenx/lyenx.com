@@ -1,49 +1,73 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
-import Typewriter from "typewriter-effect/dist/core";
+import MainLayout from "@/layouts/MainLayout.astro";
+import { Icon } from "astro-icon/components";
+import { socialItems } from "@/data/socials";
+import { skills } from "@/data/skills";
 ---
 
 <MainLayout title="Home">
-  <div
-    id="title"
-    class="md:pl-[10vw] pl-4 md:pt-16 pt-8 md:text-6xl text-4xl ml-4 md:ml-0 align-bottom flex flex-col"
-  >
-    <span class="pt-8 md:pt-0 md:text-6xl text-5xl"
-      >Hey! I'm <span
-        class="highlight inline-block font-extrabold pl-1 pr-1 w-fit">Eric</span
+  <div id="header" class="flex flex-col md:flex-row">
+    <div id="title" class="flex flex-col pt-8 align-bottom text-2xl md:pt-16">
+      <span class="mb-3 text-2xl font-bold text-primary md:text-3xl"
+        >Hey there, I'm-
+      </span>
+      <span class="text-contrast text-7xl font-bold leading-[1] md:text-[10rem]"
+        >Eric Hubert.</span
       >
-    </span>
+      <span class="mt-8 text-4xl md:pt-0 md:text-5xl"
+        >Also known as <span class="text-contrast font-bold">Lyenx.</span>
+      </span>
 
-    <span class="mt-8 md:pt-0 md:text-4xl text-2xl"
-      >But you can call me <span
-        class="highlight inline-block font-extrabold pl-1 pr-1 w-fit"
-        >Lyenx</span
-      >.</span
-    >
-
-    <p class="text-3xl md:mt-24 mt-16">I'm a <span id="writer"></span></p>
+      <p class="mt-16 gap-2 text-2xl md:mt-24 md:text-3xl">
+        <span class="text-contrast font-bold">Full-stack developer,</span>
+        <span class=""
+          >student, musician, gamer, nerd and all sorts of things.</span
+        >
+      </p>
+      <div class="mt-16 flex gap-2">
+        {
+          socialItems.map(({ href, label, icon }) => (
+            <a
+              href={href}
+              class="btn btn-active btn-sm text-sm md:h-12 md:min-h-12 md:text-lg"
+            >
+              <Icon name={icon} class="text-base text-primary md:text-2xl" />
+              {label}
+            </a>
+          ))
+        }
+      </div>
+      <div class="mt-24 flex flex-col gap-4">
+        <h2 class="text-contrast border-l-4 border-l-primary pl-4 font-bold">
+          About me
+        </h2>
+        <p class="text-lg">I'm an 18 years old Full-stack web developer based near Paris.</p>
+        <p class="text-lg">I love coding, and computer-related things in general. I've been coding since 2016, first by simply editing HTML files in Notepad, then learning Scratch. More recently, I've been learning a few different technologies, playing some CTFs and having fun with my friends!</p>
+        <p class="text-lg">I sometimes make cool things, you can learn more about them on the <a href="/projects" class=" font-medium underline underline-offset-3">projects</a> page.</p>
+        <p class="text-lg">I am also always open to work, feel free to <a href="/contact" class=" font-medium underline underline-offset-3">send me a message</a>!</p>
+      </div>
+      <div class="mt-24 flex flex-col gap-6">
+        <h2 class="text-contrast border-l-4 border-l-primary pl-4 font-bold">
+          Tech I use
+        </h2>
+        {
+          skills.map(({ name, items }) => (
+            <div class="flex flex-col gap-3">
+              <h3 class="text-xl">&middot; {name} :</h3>
+              <div class="grid grid-cols-5 gap-4 md:flex md:gap-4">
+                {items.map(({ label, icon }) => (
+                  <div
+                    class="tooltip tooltip-bottom tooltip-primary"
+                    data-tip={label}
+                  >
+                    <Icon name={icon} class="text-6xl" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
   </div>
-  <script>
-    import Typewriter from "typewriter-effect/dist/core";
-    document.addEventListener("DOMContentLoaded", () => {
-      const typed = document.getElementById("writer");
-      const tw = new Typewriter(typed, {
-        loop: true,
-        autoStart: true,
-      });
-      tw.typeString("student - <i class='fa fa-graduation-cap' />")
-        .pauseFor("3000")
-        .deleteChars("10")
-        .pauseFor("200")
-        .typeString("developer - <i class='fa fa-code' />")
-        .pauseFor("3000")
-        .deleteChars("12")
-        .pauseFor("200")
-        .typeString("guitarist - <i class='fa fa-guitar' />")
-        .pauseFor("3000")
-        .deleteChars("12")
-        .pauseFor("200")
-        .start();
-    });
-  </script>
 </MainLayout>

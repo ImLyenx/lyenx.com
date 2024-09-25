@@ -1,30 +1,30 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
 ---
 
 <MainLayout title="Home">
   <header class="relative block items-center justify-center overflow-x-hidden">
-    <div class="absolute w-[100vw] h-[80vh]">
-      <div class="w-[120vw] h-[80vmin] -translate-y-[20%] skew-y-3"></div>
+    <div class="absolute h-[80vh] w-[100vw]">
+      <div class="h-[80vmin] w-[120vw] -translate-y-[20%] skew-y-3"></div>
     </div>
     <div
-      class="relative max-w-fit text-[3vmin] mt-[6vmin] left-1/2 -translate-x-1/2 scale-[2] items-center"
+      class="relative left-1/2 mt-[6vmin] max-w-fit -translate-x-1/2 scale-[2] items-center text-[3vmin]"
     >
       <!-- Test design -->
       <span class="font-extrabold">Hey ! I'm Eric</span><br />
       <span>But you can call me Lyenx</span>
     </div>
     <div
-      class="relative mt-[8vmin] left-1/2 max-w-fit text-[5vmin] -translate-x-1/2"
+      class="relative left-1/2 mt-[8vmin] max-w-fit -translate-x-1/2 text-[5vmin]"
     >
       I'm a Web-Developer
     </div>
     <div
-      class="relative flex mt-[6vmin] left-1/2 max-w-fit text-4xl -translate-x-1/2 md:space-x-6 space-x-[3vmin]"
+      class="relative left-1/2 mt-[6vmin] flex max-w-fit -translate-x-1/2 space-x-[3vmin] text-4xl md:space-x-6"
     >
       <a href="https://github.com/ImLyenx">
         <svg
-          class="md:h-8 h-[8vmin] hover:!fill-black hover:scale-125 fill-zinc-400 dark:fill-slate-200 cursor-pointer transition-all"
+          class="h-[8vmin] cursor-pointer fill-zinc-400 transition-all hover:scale-125 hover:!fill-black dark:fill-slate-200 md:h-8"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 16 16"
         >
@@ -35,7 +35,7 @@ import MainLayout from "../layouts/MainLayout.astro";
       </a>
       <a href="https://twitter.com/ImLyenx">
         <svg
-          class="md:h-8 h-[8vmin] hover:!fill-[#1DA1F2] hover:scale-125 fill-zinc-400 dark:fill-slate-200 cursor-pointer transition-all"
+          class="h-[8vmin] cursor-pointer fill-zinc-400 transition-all hover:scale-125 hover:!fill-[#1DA1F2] dark:fill-slate-200 md:h-8"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 16 16"
           onclick="window.location.href='https://twitter.com/ImLyenx'"
@@ -47,30 +47,30 @@ import MainLayout from "../layouts/MainLayout.astro";
       </a>
     </div>
     <div
-      class="relative mt-[16vmin] left-1/2 max-w-fit text-4xl -translate-x-1/2"
+      class="relative left-1/2 mt-[16vmin] max-w-fit -translate-x-1/2 text-4xl"
     >
       Skills :
     </div>
     <div
-      class="relative md:flex block mt-8 left-1/2 max-w-fit text-4xl -translate-x-1/2 md:space-x-16 md:space-y-0 space-y-8"
+      class="relative left-1/2 mt-8 block max-w-fit -translate-x-1/2 space-y-8 text-4xl md:flex md:space-x-16 md:space-y-0"
     >
       <img
         title="Python"
         alt="python logo"
         src="./python.png"
-        class="h-24 mx-auto"
+        class="mx-auto h-24"
       />
       <img
         title="HTML5"
         alt="html logo"
         src="./html.png"
-        class="h-24 mx-auto"
+        class="mx-auto h-24"
       />
       <img
         title="CSS3"
         alt="css logo"
         src="./css.png"
-        class="h-24 mx-auto md:mt-0"
+        class="mx-auto h-24 md:mt-0"
       />
       <img
         title="JavaScript"
@@ -91,11 +91,11 @@ import MainLayout from "../layouts/MainLayout.astro";
         class="h-24"
       />
     </div>
-    <div class="relative mt-16 left-1/2 max-w-fit text-3xl -translate-x-1/2">
+    <div class="relative left-1/2 mt-16 max-w-fit -translate-x-1/2 text-3xl">
       Learning :
     </div>
     <div
-      class="relative flex mt-8 left-1/2 max-w-fit text-4xl -translate-x-1/2 space-x-4"
+      class="relative left-1/2 mt-8 flex max-w-fit -translate-x-1/2 space-x-4 text-4xl"
     >
       <img title="React" alt="react logo" src="./react.png" class="h-20" />
     </div>

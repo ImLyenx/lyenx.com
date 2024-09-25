@@ -1,0 +1,21 @@
+---
+const { heading } = Astro.props;
+---
+
+<li
+  class="toc-link"
+  style={"margin-left: " + (1 + heading.depth / 10) + "rem;"}
+>
+  <a href={"#" + heading.slug}>
+    {heading.text}
+  </a>
+  {
+    heading.subheadings.length > 0 && (
+      <ul class="mt-1 flex flex-col gap-1">
+        {heading.subheadings.map((subheading: any) => (
+          <Astro.self heading={subheading} />
+        ))}
+      </ul>
+    )
+  }
+</li>

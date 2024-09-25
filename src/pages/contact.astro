@@ -1,0 +1,101 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+---
+
+<MainLayout title="Contact">
+  <div class="mb-8 pt-8">
+    <h1 class="text-4xl font-extrabold">Contact me</h1>
+  </div>
+  <form class="flex flex-col gap-4">
+      <label for="name" class="flex flex-col gap-2">Name:
+      <input type="text" id="name" name="name" class="input input-bordered"></label>
+
+      <label for="email" class="flex flex-col gap-2">Email:
+      <input type="email" id="email" name="email" class="input input-bordered"></label>
+
+      <label for="subject" class="flex flex-col gap-2">Subject:
+      <input type="text" id="subject" name="subject" class="input input-bordered"></label>
+
+      <label for="message" class="flex flex-col gap-2">Message:
+      <textarea id="message" name="message" class="textarea textarea-bordered" rows="6"></textarea></label>
+
+      <button type="submit" class="btn" id="submit">Send</button>
+  </form>
+  <p class="mt-12 -mb-4">You can also send me a message on <span class="tooltip tooltip-primary tooltip-bottom inline-block font-bold underline underline-offset-3" data-tip="lyenx">Discord</span> or a <span class="tooltip tooltip-primary tooltip-bottom inline-block font-bold underline underline-offset-3" data-tip="contact [at] lyenx [dot] com">mail</span>.</p>
+  <script>
+    import { actions } from 'astro:actions';
+  
+    const form = document.querySelector('form');
+    form?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      // @ts-ignore
+      document.getElementById("submit").disabled = true;
+      document.getElementById("submit").innerHTML = "<div class='loading loading-ring text-primary' />";
+      const formData = new FormData(form);
+      const { error } = await actions.mail(formData);
+      // @ts-ignore
+      document.getElementById("submit").disabled = false;
+      document.getElementById("submit").innerHTML = "Send";
+      if (!error) {
+        document.getElementById('alert-success').classList.remove('hidden');
+        setTimeout(() => {
+          document.getElementById('alert-success').classList.add('hidden');
+        }, 5000);
+      } else {
+        if (error.code === "UNAUTHORIZED") {
+          document.getElementById('alert-warning').classList.remove('hidden');
+          setTimeout(() => {
+            document.getElementById('alert-warning').classList.add('hidden');
+          }, 5000);
+        } else {
+            document.getElementById('alert-error').classList.remove('hidden');
+            setTimeout(() => {
+              document.getElementById('alert-error').classList.add('hidden');
+            }, 5000);
+        }
+      }
+    })
+  </script>
+</MainLayout>
+<div role="alert" class="alert alert-success absolute bottom-8 left-4 w-96 hidden z-50" id="alert-success">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-6 w-6 shrink-0 stroke-current"
+    fill="none"
+    viewBox="0 0 24 24">
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>
+  <span>Your message was sent successfully!</span>
+</div>
+<div role="alert" class="alert alert-warning absolute bottom-8 left-4 w-96 hidden"  id="alert-warning">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-6 w-6 shrink-0 stroke-current"
+    fill="none"
+    viewBox="0 0 24 24">
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+  </svg>
+  <span>Invalid email address</span>
+</div>
+<div role="alert" class="alert alert-error absolute bottom-8 left-4 w-96 hidden" id="alert-error">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-6 w-6 shrink-0 stroke-current"
+    fill="none"
+    viewBox="0 0 24 24">
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>
+  <span>An unknown error occurred</span>
+</div>
