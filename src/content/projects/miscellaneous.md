@@ -14,7 +14,7 @@ description: All my random little side-projects that are not big enough to fill 
 github: ImLyenx
 ---
 
-## Context
+## About this page
 
 This article will be a collection of all the small projects I've made that are not big enough to have their own post. They are all school or personal side-projects, made to learn something new, or to test a new technology.
 The vast majority of these projects are closed-source, since they might contain personal information or are simply not worth sharing. If one of them is open-source, you'll find a link to the repository at the end of the project description.
@@ -29,7 +29,7 @@ I made a few bots for my friend group's Discord server, and a Slack bot that can
 
 ## Go Terminal User Interface
 
-I made a simple TUI using Go and the "charmbracelet/bubbletea" library. I initially planned to make a version of my portfolio website that anyone could access _via_ SSH. I was heavily inspired by [terminal.shop](https://terminal.shop), a coffee shop that you can only purchase from using SSH. You can try it by running `ssh terminal.shop` in your terminal.
+I made a simple TUI using Go and the `charmbracelet/bubbletea` library. I initially planned to make a version of my portfolio website that anyone could access _via_ SSH. I was heavily inspired by [terminal.shop](https://terminal.shop), a coffee shop that you can only purchase from using SSH. You can try it by running `ssh terminal.shop` in your terminal.
 
 ## C# Platformer
 
