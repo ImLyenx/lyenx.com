@@ -14,20 +14,21 @@ demo: https://val.lyenx.com
 
 ## Context
 
-In VALORANT, there is a lot of information that is available *via* the API but hidden to the player in the game client, or not accessible outside of the game itself, which makes it very difficult to access that data without giving third-party apps access to your account, which means trusting some random developer with your whole Riot Games account. I wanted to change that (for myself only, this wasn't meant to be a public project), so I built a full website allowing me to sign in with my Riot Games account, with the exact same inteface as the official game client, and it was way more difficult than I thought it'd be.
+In VALORANT, there is a lot of information that is available _via_ the API but hidden to the player in the game client (by this I mean the skin loadouts of the other players in your lobby, NOT the real names of players that have Streamer Mode enabled. And I will not add this since it's against Riot's Terms of Service.), or not accessible outside of the game itself, which makes it very difficult to access that data without giving third-party apps access to your account, which means trusting some random developer with your whole Riot Games account. I wanted to change that (for myself only, this wasn't meant to be a public project), so I built a full website allowing me to sign in with my Riot Games account, with the exact same inteface as the official game client, and it was way more difficult than I thought it'd be.
 
 ## The project
 
 I needed to be able to sign in with my Riot Games account's credentials, get the data from the ~~unofficial~~ VALORANT API, and display it in a copy of the in-game interface.
 
 These are the features I was planning to implement :
+
 - Get your account stats (level, wallet, name, uuid)
 - See your personal store (random set of purchasable in-game weapons skins that rotates every day).
 - See your personal collection (the skins you own).
 - See your career (your in-game rank, game history).
 - See the current game you're playing. (map, agents, other players' stats, equipped skins)
 
-I managed to successfully implement the first three, but gave up before the last two. Why? The VALORANT API sucks. A lot. It's the worst API I've ever seen/used. Weird JSON data schemas that make no sense, random value naming, no consistency whatsoever. And since it's unofficial (and not supposed to be used by anything other than the official client), there is no documentation other than an out-of-date community-made list of endpoints and methods.
+I managed to successfully implement the first three, but gave up before the last two. Why? The VALORANT API is really hard to work with when you're not supposed to. Weird JSON data schemas that make no sense, random value naming, no consistency... And since it's unofficial (and not supposed to be used by anything other than the official client), there is no documentation other than an out-of-date community-made list of endpoints and methods.
 
 To make a request, you need at least an Authorization Token, but sometimes also an Entitlements token, Cookies, an ID token, and 2 mystic values, with the first being a Base-64 encoded JSON string with your Operating System version (or you can just hardcode a specific value and it will always work no matter what), and the second being the client version, that you can get with an external community-made API that documents the build versions of the game. Sometimes you can use an old one, sometimes not. RNG-based API.
 
