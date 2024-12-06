@@ -26,6 +26,10 @@ export const skills = [
         label: "Python",
         icon: "skill-icons:python-light",
       },
+      {
+        label: "Go",
+        icon: "skill-icons:golang",
+      }
     ],
   },
   {
@@ -47,6 +51,18 @@ export const skills = [
         label: "Sass",
         icon: "skill-icons:sass",
       },
+      {
+        label: "Next.js",
+        icon: "skill-icons:nextjs-light",
+      },
+      {
+        label: "Flutter",
+        icon: "skill-icons:flutter-light",
+      },
+      {
+        label: "Dart",
+        icon: "skill-icons:dart-light",
+      }
     ],
   },
   {
@@ -68,6 +84,14 @@ export const skills = [
         label: "MySQL",
         icon: "skill-icons:mysql-light",
       },
+      {
+        label: "Symfony",
+        icon: "skill-icons:symfony-light",
+      },
+      {
+        label: "Supabase",
+        icon: "skill-icons:supabase-light",
+      }
     ],
   },
   {
@@ -117,6 +141,23 @@ export const skills = [
         label: "Unity",
         icon: "skill-icons:unity-light",
       },
+      {
+        label: "Vercel",
+        icon: "skill-icons:vercel-light",
+      },
+      {
+        label: "WordPress",
+        icon: "skill-icons:wordpress",
+      },
+      {
+        label: "Arduino",
+        icon: "skill-icons:arduino",
+      },
+      {
+        label: "Raspberry Pi",
+        icon: "skill-icons:raspberrypi-light",
+      }
+
     ],
   },
 ];
