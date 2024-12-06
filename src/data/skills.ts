@@ -29,7 +29,11 @@ export const skills = [
       {
         label: "Go",
         icon: "skill-icons:golang",
-      }
+      },
+      {
+        label: "Dart",
+        icon: "skill-icons:dart-light",
+      },
     ],
   },
   {
@@ -59,10 +63,6 @@ export const skills = [
         label: "Flutter",
         icon: "skill-icons:flutter-light",
       },
-      {
-        label: "Dart",
-        icon: "skill-icons:dart-light",
-      }
     ],
   },
   {
