@@ -7,7 +7,10 @@ import { skills } from "@/data/skills";
 
 <MainLayout title="Home">
   <div id="header" class="flex flex-col md:flex-row">
-    <div id="title" class="flex flex-col pt-8 align-bottom text-2xl md:pt-16">
+    <div
+      id="title"
+      class="flex max-w-5xl flex-col pt-8 align-bottom text-2xl md:pt-16"
+    >
       <span class="mb-3 text-2xl font-bold text-primary md:text-3xl"
         >Hey there, I'm-
       </span>
@@ -20,9 +23,7 @@ import { skills } from "@/data/skills";
 
       <p class="mt-16 gap-2 text-2xl md:mt-24 md:text-3xl">
         <span class="text-contrast font-bold">Full-stack developer,</span>
-        <span class=""
-          >student, musician, gamer, nerd and all sorts of things.</span
-        >
+        <span class="">student, musician, gamer, and all sorts of things.</span>
       </p>
       <div class="mt-16 flex gap-2">
         {
@@ -41,10 +42,28 @@ import { skills } from "@/data/skills";
         <h2 class="text-contrast border-l-4 border-l-primary pl-4 font-bold">
           About me
         </h2>
-        <p class="text-lg">I'm an 18 years old Full-stack web developer based near Paris.</p>
-        <p class="text-lg">I love coding, and computer-related things in general. I've been coding since 2016, first by simply editing HTML files in Notepad, then learning Scratch. More recently, I've been learning a few different technologies, playing some CTFs and having fun with my friends!</p>
-        <p class="text-lg">I sometimes make cool things, you can learn more about them on the <a href="/projects" class=" font-medium underline underline-offset-3">projects</a> page.</p>
-        <p class="text-lg">I am also always open to work, feel free to <a href="/contact" class=" font-medium underline underline-offset-3">send me a message</a>!</p>
+        <p class="text-lg">
+          I'm an 18 years old Full-stack web developer based near Paris.
+        </p>
+        <p class="text-lg">
+          I love coding, and computer-related things in general. I've been
+          coding since 2016, first by simply editing HTML files in Notepad, then
+          learning Scratch. More recently, I've been learning a few different
+          technologies, playing some CTFs and having fun with my friends!
+        </p>
+        <p class="text-lg">
+          I sometimes make cool things, you can learn more about them on the <a
+            href="/projects"
+            class="underline-offset-3 font-medium underline">projects</a
+          > page.
+        </p>
+        <p class="text-lg">
+          I am also always open to work, feel free to <a
+            href="/contact"
+            class="underline-offset-3 font-medium underline"
+            >send me a message</a
+          >!
+        </p>
       </div>
       <div class="mt-24 flex flex-col gap-6">
         <h2 class="text-contrast border-l-4 border-l-primary pl-4 font-bold">
@@ -54,7 +73,7 @@ import { skills } from "@/data/skills";
           skills.map(({ name, items }) => (
             <div class="flex flex-col gap-3">
               <h3 class="text-xl">&middot; {name} :</h3>
-              <div class="grid grid-cols-5 gap-4 md:flex md:gap-4">
+              <div class="flex flex-wrap gap-4">
                 {items.map(({ label, icon }) => (
                   <div
                     class="tooltip tooltip-bottom tooltip-primary"
