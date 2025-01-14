@@ -17,7 +17,10 @@ import { Icon } from "astro-icon/components";
             <div class="card-body">
               <div class="flex justify-between">
                 <h2 class="card-title">
-                  <a class="font-extrabold" href={`/projects/${entry.slug}`}>
+                  <a
+                    class="font-extrabold underline underline-offset-4"
+                    href={`/projects/${entry.slug}`}
+                  >
                     {entry.data.title}
                   </a>
                 </h2>
