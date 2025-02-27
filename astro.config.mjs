@@ -17,15 +17,12 @@ export default defineConfig({
         carbon: ["*"],
         "simple-icons": ["*"],
         "skill-icons": ["*"],
+        logos: ["*"],
       },
     }),
   ],
 
-  markdown: {
-    rehypePlugins: [sectionize],
-  },
+  markdown: { rehypePlugins: [sectionize] },
 
-  adapter: node({
-    mode: "standalone",
-  }),
+  adapter: node({ mode: "standalone" }),
 });

@@ -15,6 +15,7 @@
     "@astrojs/tailwind": "^5.1.1",
     "@fontsource/inter": "^5.0.19",
     "@iconify-json/carbon": "^1.1.36",
+    "@iconify-json/logos": "^1.2.4",
     "@iconify-json/simple-icons": "^1.1.109",
     "@iconify-json/skill-icons": "^1.1.8",
     "@tailwindcss/typography": "^0.5.9",
